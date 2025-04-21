@@ -1,0 +1,9 @@
+[submodule "rtl/KLP32-RV32I-CPU"]
+	path = rtl/KLP32-RV32I-CPU
+	url = https://github.com/KietLe11/KLP32-RISCV
+[submodule "rtl/UART-Module"]
+	path = rtl/UART-Module
+	url = https://github.com/RISCV-RV32I-MCU/UART-Module
+[submodule "rtl/Matrix-Multiplier"]
+	path = rtl/Matrix-Multiplier
+	url = https://github.com/RISCV-RV32I-MCU/Matrix-Multiplier
