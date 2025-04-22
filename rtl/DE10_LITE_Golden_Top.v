@@ -134,6 +134,9 @@ module DE10_LITE_Golden_Top(
 //  Structural coding
 //=======================================================
 
-
+RISC_V_MCU mcu(
+	.clk(MAX10_CLK1_50),
+	.reset_in(KEY[0])
+);
 
 endmodule

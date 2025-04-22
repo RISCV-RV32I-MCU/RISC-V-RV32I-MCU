@@ -6,3 +6,4 @@
 *.qws
 *_nativelink_simulation.rpt
 qar_info.json
+*.bak
