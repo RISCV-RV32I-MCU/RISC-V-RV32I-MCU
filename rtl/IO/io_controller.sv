@@ -13,9 +13,9 @@ module io_controller
     output logic [15:0] slot_cs_array,
     output logic [15:0] slot_mem_rd_array,
     output logic [15:0] slot_mem_wr_array,
-    output logic [4:0]  slot_reg_addr_array [15:0],
-    input  logic  [31:0] slot_rd_data_array [15:0],
-    output logic [31:0] slot_wr_data_array [15:0]
+    output logic [4:0]  slot_reg_addr_array [0:15],
+    input  logic  [31:0] slot_rd_data_array [0:15],
+    output logic [31:0] slot_wr_data_array [0:15]
 );
 
     // Signal declaration
@@ -38,7 +38,7 @@ module io_controller
     generate
         genvar i;
         for (i=0; i<16; i=i+1)
-        begin:  slot_signal_gen
+        begin:  gen_slot_signal
             assign slot_mem_rd_array[i] = bus_rd;//en
             assign slot_mem_wr_array[i] = bus_wr;//en
             assign slot_wr_data_array[i] = bus_wr_data;//data
@@ -47,6 +47,7 @@ module io_controller
     endgenerate
 
     // mux for read data
-    assign bus_rd_data = slot_rd_data_array[slot_addr]; //Since it's the only input to the MCS from the bus
+    // Since it's the only input to the MCS from the bus
+    assign bus_rd_data = slot_rd_data_array[slot_addr];
 
 endmodule

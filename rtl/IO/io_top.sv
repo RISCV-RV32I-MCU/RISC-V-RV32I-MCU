@@ -27,9 +27,9 @@ module io_top
     logic [15:0] mem_rd_array;
     logic [15:0] mem_wr_array;
     logic [15:0] cs_array;
-    logic [4:0] reg_addr_array [15:0];
-    logic [31:0] rd_data_array [15:0]; 
-    logic [31:0] wr_data_array [15:0];
+    logic [4:0] reg_addr_array [0:15];
+    logic [31:0] rd_data_array [0:15];
+    logic [31:0] wr_data_array [0:15];
 
     // Instantiate I/O Controller
     io_controller ctrl_unit
@@ -76,7 +76,7 @@ module io_top
    generate
       genvar i;
       for (i=4; i<15; i=i+1) //Change as needed, this is assuming we used slots 0->3
-        begin : initialization_loop
+        begin : gen_initialization_loop
             assign rd_data_array[i] = 32'h0;
         end
    endgenerate
