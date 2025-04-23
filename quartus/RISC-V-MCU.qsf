@@ -432,7 +432,12 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-#set_global_assignment -name SYSTEMVERILOG_FILE "../rtl/Matrix-Multiplier/matrix_multiplier.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/IO/io_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/IO/io_top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/IO/uart/uart_peripheral.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/IO/uart/uart_top.sv
+set_global_assignment -name VERILOG_FILE "../rtl/Matrix-Multiplier/matrix.v"
+set_global_assignment -name VERILOG_FILE "../rtl/Matrix-Multiplier/mac.v"
 set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/RISC_V_MCU.sv
 set_global_assignment -name VERILOG_FILE ../rtl/DE10_LITE_Golden_Top.v
 set_global_assignment -name SYSTEMVERILOG_FILE "../rtl/KLP32-RV32I-CPU/rtl/KLP32V2_tb.sv"
