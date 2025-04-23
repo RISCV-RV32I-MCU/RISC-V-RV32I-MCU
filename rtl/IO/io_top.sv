@@ -27,9 +27,9 @@ module io_top
     logic [15:0] mem_rd_array;
     logic [15:0] mem_wr_array;
     logic [15:0] cs_array;
-    logic [4:0] reg_addr_array [0:15];
-    logic [31:0] rd_data_array [0:15];
-    logic [31:0] wr_data_array [0:15];
+    logic [4:0] reg_addr_array [16];
+    logic [31:0] rd_data_array [16];
+    logic [31:0] wr_data_array [16];
 
     // Instantiate I/O Controller
     io_controller ctrl_unit

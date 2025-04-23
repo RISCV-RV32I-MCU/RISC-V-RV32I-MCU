@@ -13,9 +13,9 @@ module io_controller
     output logic [15:0] slot_cs_array,
     output logic [15:0] slot_mem_rd_array,
     output logic [15:0] slot_mem_wr_array,
-    output logic [4:0]  slot_reg_addr_array [0:15],
-    input  logic  [31:0] slot_rd_data_array [0:15],
-    output logic [31:0] slot_wr_data_array [0:15]
+    output logic [4:0]  slot_reg_addr_array [16],
+    input  logic  [31:0] slot_rd_data_array [16],
+    output logic [31:0] slot_wr_data_array [16]
 );
 
     // Signal declaration
