@@ -7,3 +7,6 @@
 [submodule "rtl/Matrix-Multiplier"]
 	path = rtl/Matrix-Multiplier
 	url = https://github.com/RISCV-RV32I-MCU/Matrix-Multiplier
+[submodule "rtl/CORDIC-Module"]
+	path = rtl/CORDIC-Module
+	url = https://github.com/RISCV-RV32I-MCU/CORDIC-Module
