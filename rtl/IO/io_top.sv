@@ -12,7 +12,7 @@ module io_top
 
     // UART
     input logic rx,
-    output logic tx,
+    output logic tx
     // SPI (optional)
             // input logic miso,
             // output logic sclk,
@@ -78,7 +78,7 @@ module io_top
     .write(mem_wr_array[2]),
     .addr(reg_addr_array[2]),
     .rd_data(rd_data_array[2]),
-    .wr_data(wr_data_array[2]),
+    .wr_data(wr_data_array[2])
     );
     // Slot 3: Cordic Module
 
