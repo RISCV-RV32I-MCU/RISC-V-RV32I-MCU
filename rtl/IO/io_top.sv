@@ -76,7 +76,7 @@ module io_top
    generate
       genvar i;
       for (i=4; i<15; i=i+1) //Change as needed, this is assuming we used slots 0->3
-        begin
+        begin : initialization_loop
             assign rd_data_array[i] = 32'h0;
         end
    endgenerate
