@@ -20,7 +20,8 @@ module io_top
             // output logic ss_n
     // Matrix Multiplier
             //No IO
-    // Cordic ?
+    // Cordic 
+            //No IO
 );
 
     // Register Declaration
@@ -66,10 +67,21 @@ module io_top
     .tx(tx),
     .rx(rx)
     );
-    // Slot 1: SPI
-
-    // Slot 2: Matrix Multiplier
+    
+    // Slot 1: Matrix Multiplier
     matrix_top MATRIX_MULTIPLIER_MODULE
+    (
+    .clk(clk),
+    .reset(reset),
+    .cs(cs_array[1]),
+    .read(mem_rd_array[1]),
+    .write(mem_wr_array[1]),
+    .addr(reg_addr_array[1]),
+    .rd_data(rd_data_array[1]),
+    .wr_data(wr_data_array[1])
+    );
+    // Slot 2: Cordic Module
+    cordic_top CORDIC_MODULE
     (
     .clk(clk),
     .reset(reset),
@@ -80,12 +92,10 @@ module io_top
     .rd_data(rd_data_array[2]),
     .wr_data(wr_data_array[2])
     );
-    // Slot 3: Cordic Module
-
     // Assign 0's to all unused slot rd_data signals
    generate
       genvar i;
-      for (i=4; i<15; i=i+1) //Change as needed, this is assuming we used slots 0->3
+       for (i=3; i<15; i=i+1) //Change as needed, this is assuming we used slots 0->2
         begin : gen_initialization_loop
             assign rd_data_array[i] = 32'h0;
         end
