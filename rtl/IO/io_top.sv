@@ -14,12 +14,12 @@ module io_top
     input logic rx,
     output logic tx,
     // SPI (optional)
-    input logic miso,
-    output logic sclk,
-    output logic mosi,
-    output logic ss_n
+            // input logic miso,
+            // output logic sclk,
+            // output logic mosi,
+            // output logic ss_n
     // Matrix Multiplier
-
+            //No IO
     // Cordic ?
 );
 
@@ -69,7 +69,17 @@ module io_top
     // Slot 1: SPI
 
     // Slot 2: Matrix Multiplier
-
+    matrix_top MATRIX_MULTIPLIER_MODULE
+    (
+    .clk(clk),
+    .reset(reset),
+    .cs(cs_array[2]),
+    .read(mem_rd_array[2]),
+    .write(mem_wr_array[2]),
+    .addr(reg_addr_array[2]),
+    .rd_data(rd_data_array[2]),
+    .wr_data(wr_data_array[2]),
+    );
     // Slot 3: Cordic Module
 
     // Assign 0's to all unused slot rd_data signals
